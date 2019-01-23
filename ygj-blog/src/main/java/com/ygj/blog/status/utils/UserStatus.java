@@ -8,7 +8,7 @@ package com.ygj.blog.status.utils;
  */
 public enum UserStatus {
 
-	USER_EXIST("user already exists","20001","用户已存在"),USER_PARAM_NULL("user parameter is null","20002"),USER_NAME_NULL("user name is null","20002","用户名不能为空");
+	USER_EXIST("user already exists","20001","用户已存在"),USER_PARAM_NULL("user parameter is null","20002","用户名不能为空"),USER_NAME_NULL("user name is null","20002","用户名不能为空");
 	
 	private UserStatus(String code, String sid, String msg) {
 		this.code = code;

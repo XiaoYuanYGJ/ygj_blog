@@ -37,9 +37,7 @@ public class UserServiceImpl implements IUserService{
 		
 		Message<UserStatus> message = new Message<UserStatus>();
 		
-		if(){
-			
-		}
+	 
 		
 		
 		return null;
