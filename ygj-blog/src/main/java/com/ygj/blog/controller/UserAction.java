@@ -1,5 +1,8 @@
 package com.ygj.blog.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ygj.blog.service.IUserService;
+import com.ygj.blog.status.utils.UserStatus;
+import com.ygj.blog.utils.Message;
 
 /**
  * 用户控制器
@@ -21,18 +26,18 @@ public class UserAction {
 	@Autowired
 	private IUserService userService;
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Model model) {
-
-		model.addAttribute("message", "测试，查看可以使用，然后搭建基本项目结构");
-
+	
+	@RequestMapping(value="/db-test.do",method=RequestMethod.GET)
+	public String testDB(Model model,HttpServletRequest req){
+		
+		String nameOrPhone = req.getParameter("userName");
+		
+		Message<UserStatus> messgae= userService.findUserByUserNameOrPhone(nameOrPhone);
+		
+		model.addAttribute("message", messgae.getObj());
+		
 		return "login";
 	}
 	
-	@RequestMapping(value="/test.html",method=RequestMethod.GET)
-	@ResponseBody
-	public String test(){
-		return "this is response body message ......";
-	}
-
+ 
 }

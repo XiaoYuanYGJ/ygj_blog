@@ -30,14 +30,23 @@ public class UserServiceImpl implements IUserService{
 
 	public Message<UserStatus> findUserByUserNameOrPhone(String userNameOrPhone) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		User user= userDao.queryByUserNameOrPhone(userNameOrPhone);
+		
+		System.err.println("用户名-------《《》》》》》》》"+user.getPhone());
+		
+		Message<UserStatus> message = new Message<UserStatus>();
+		
+		message.setObj(user);
+		
+		return message;
 	}
 
 	public Message<UserStatus> addUserByRegister(User user) {
 		
 		Message<UserStatus> message = new Message<UserStatus>();
 		
-	 
+		
 		
 		
 		return null;

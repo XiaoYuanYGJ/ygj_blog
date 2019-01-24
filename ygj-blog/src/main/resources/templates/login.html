@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>程序猿阿杰的博客 | 登录</title>
 </head>
 <body>
-	测试   使用thymeleaf模板引擎。。。。<br/>
- 	<p th:text="'信息：'+${message}"></p>
+	测试 使用thymeleaf模板引擎。。。。
+	<br />
+	<p th:text="'用户名：'+${message.userName}"></p>
+	<p th:text="'性别：'+${message.gender}"></p>
+	<p th:text="'电话：'+${message.phone}"></p>
+	<p th:text="'创建时间：'+${message.createTime}"></p>
+
 </body>
 </html>

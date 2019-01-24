@@ -12,8 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @date 2019年1月20日
  */
 @SpringBootApplication
-@MapperScan("com.ygj.blog.dao") //由于不能自动创建dao
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@MapperScan("com.ygj.blog.dao")
 public class MyBlogApplication {
 
 	public static void main(String[] args) {
